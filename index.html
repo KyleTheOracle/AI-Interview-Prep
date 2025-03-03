@@ -1,0 +1,1401 @@
+<code contenteditable="false" spellcheck="false" class="w-full leading-5 focus:outline-none focus:ring-0 block flex flex-grow whitespace-pre-wrap hljs language-html"><span class="hljs-meta"><!DOCTYPE html>
+    <span class="hljs-tag"><html lang="en">
+    <span class="hljs-tag"><head>
+    <span class="hljs-tag"><meta charset="UTF-8">
+    <span class="hljs-tag"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <span class="hljs-tag"><meta property="og:title" content="AI Interview Preparation Tool">
+    <span class="hljs-tag"><meta property="og:description" content="Interactive tool to help prepare for AI Engineer and Specialist job interviews">
+    <span class="hljs-tag"><meta property="og:image" content="https://cdn.simulationtheory.ai/gasset/?asset=img&prompt=artificial intelligence interview preparation&w=1200&h=630&style=professional">
+    <span class="hljs-tag"><meta property="og:type" content="website">
+    <span class="hljs-tag"><title>AI Interview Preparation Tool<span class="hljs-tag"></title>
+    <span class="hljs-tag"><link rel="icon" href="https://cdn.simulationtheory.ai/gasset/?asset=img&prompt=AI interview icon&w=32&h=32&transparent=true">
+    <span class="hljs-tag"><script src="https://cdn.tailwindcss.com"><span class="hljs-tag"></script>
+    <span class="hljs-tag"><link href="/chat/cdn/animate.min.css" rel="stylesheet">
+    <span class="hljs-tag"><script src="/chat/cdn/papaparse.min.js"><span class="hljs-tag"></script>
+    <span class="hljs-tag"><style><span class="language-css">
+        .topic-bubble {
+            transition: all 0.3s ease;
+        }
+        .topic-bubble:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .modal {
+            transition: opacity 0.3s ease;
+        }
+        @keyframes pulse-border {
+            0% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+            }
+        }
+        .pulse-animation {
+            animation: pulse-border 2s infinite;
+        }
+    <span class="hljs-tag"></style>
+    <span class="hljs-tag"></head>
+    <span class="hljs-tag"><body class="bg-gray-50 min-h-screen">
+    <span class="hljs-tag"><div id="loading" class="fixed inset-0 flex items-center justify-center bg-white z-50">
+        <span class="hljs-tag"><div class="text-center">
+            <span class="hljs-tag"><div class="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"><span class="hljs-tag"></div>
+            <span class="hljs-tag"><p class="text-xl text-gray-700">Loading your AI Interview Prep Tool...<span class="hljs-tag"></p>
+        <span class="hljs-tag"></div>
+    <span class="hljs-tag"></div>
+    
+    <span class="hljs-tag"><header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-8 px-4 shadow-lg">
+        <span class="hljs-tag"><div class="container mx-auto max-w-6xl">
+            <span class="hljs-tag"><h1 class="text-3xl md:text-4xl font-bold mb-2">AI Engineer Interview Preparation<span class="hljs-tag"></h1>
+            <span class="hljs-tag"><p class="text-lg opacity-90">Master your interview with comprehensive preparation for AI Engineering and Specialist roles<span class="hljs-tag"></p>
+        <span class="hljs-tag"></div>
+    <span class="hljs-tag"></header>
+    
+    <span class="hljs-tag"><main class="container mx-auto max-w-6xl px-4 py-8">
+        <span class="hljs-tag"><section class="mb-12">
+            <span class="hljs-tag"><h2 class="text-2xl font-bold text-gray-800 mb-6">Interview Preparation Topics<span class="hljs-tag"></h2>
+    
+            <span class="hljs-tag"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Topic Bubbles -->
+                <span class="hljs-tag"><div class="topic-bubble bg-white rounded-xl shadow-md p-6 cursor-pointer hover:bg-blue-50" data-topic="technical">
+                    <span class="hljs-tag"><div class="flex items-center mb-4">
+                        <span class="hljs-tag"><div class="bg-blue-100 p-3 rounded-full">
+                            <span class="hljs-tag"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <span class="hljs-tag"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                            <span class="hljs-tag"></svg>
+                        <span class="hljs-tag"></div>
+                        <span class="hljs-tag"><h3 class="ml-4 text-xl font-semibold text-gray-800">Technical Concepts<span class="hljs-tag"></h3>
+                    <span class="hljs-tag"></div>
+                    <span class="hljs-tag"><p class="text-gray-600">Review core AI and ML concepts, algorithms, and frameworks commonly tested in interviews.<span class="hljs-tag"></p>
+                <span class="hljs-tag"></div>
+    
+                <span class="hljs-tag"><div class="topic-bubble bg-white rounded-xl shadow-md p-6 cursor-pointer hover:bg-blue-50" data-topic="questions">
+                    <span class="hljs-tag"><div class="flex items-center mb-4">
+                        <span class="hljs-tag"><div class="bg-indigo-100 p-3 rounded-full">
+                            <span class="hljs-tag"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <span class="hljs-tag"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            <span class="hljs-tag"></svg>
+                        <span class="hljs-tag"></div>
+                        <span class="hljs-tag"><h3 class="ml-4 text-xl font-semibold text-gray-800">Practice Questions<span class="hljs-tag"></h3>
+                    <span class="hljs-tag"></div>
+                    <span class="hljs-tag"><p class="text-gray-600">Interactive Q&A with common interview questions for AI Engineer and Specialist roles.<span class="hljs-tag"></p>
+                <span class="hljs-tag"></div>
+    
+                <span class="hljs-tag"><div class="topic-bubble bg-white rounded-xl shadow-md p-6 cursor-pointer hover:bg-blue-50" data-topic="resume">
+                    <span class="hljs-tag"><div class="flex items-center mb-4">
+                        <span class="hljs-tag"><div class="bg-green-100 p-3 rounded-full">
+                            <span class="hljs-tag"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <span class="hljs-tag"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            <span class="hljs-tag"></svg>
+                        <span class="hljs-tag"></div>
+                        <span class="hljs-tag"><h3 class="ml-4 text-xl font-semibold text-gray-800">Resume & Portfolio<span class="hljs-tag"></h3>
+                    <span class="hljs-tag"></div>
+                    <span class="hljs-tag"><p class="text-gray-600">Tips for optimizing your resume and portfolio for AI roles and highlighting key skills.<span class="hljs-tag"></p>
+                <span class="hljs-tag"></div>
+    
+                <span class="hljs-tag"><div class="topic-bubble bg-white rounded-xl shadow-md p-6 cursor-pointer hover:bg-blue-50" data-topic="projects">
+                    <span class="hljs-tag"><div class="flex items-center mb-4">
+                        <span class="hljs-tag"><div class="bg-yellow-100 p-3 rounded-full">
+                            <span class="hljs-tag"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <span class="hljs-tag"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            <span class="hljs-tag"></svg>
+                        <span class="hljs-tag"></div>
+                        <span class="hljs-tag"><h3 class="ml-4 text-xl font-semibold text-gray-800">Project Showcase<span class="hljs-tag"></h3>
+                    <span class="hljs-tag"></div>
+                    <span class="hljs-tag"><p class="text-gray-600">Learn how to effectively present your AI projects and discuss technical challenges.<span class="hljs-tag"></p>
+                <span class="hljs-tag"></div>
+    
+                <span class="hljs-tag"><div class="topic-bubble bg-white rounded-xl shadow-md p-6 cursor-pointer hover:bg-blue-50" data-topic="behavioral">
+                    <span class="hljs-tag"><div class="flex items-center mb-4">
+                        <span class="hljs-tag"><div class="bg-red-100 p-3 rounded-full">
+                            <span class="hljs-tag"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <span class="hljs-tag"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            <span class="hljs-tag"></svg>
+                        <span class="hljs-tag"></div>
+                        <span class="hljs-tag"><h3 class="ml-4 text-xl font-semibold text-gray-800">Behavioral Questions<span class="hljs-tag"></h3>
+                    <span class="hljs-tag"></div>
+                    <span class="hljs-tag"><p class="text-gray-600">Prepare for behavioral and situational questions with the STAR method and examples.<span class="hljs-tag"></p>
+                <span class="hljs-tag"></div>
+    
+                <span class="hljs-tag"><div class="topic-bubble bg-white rounded-xl shadow-md p-6 cursor-pointer hover:bg-blue-50" data-topic="trends">
+                    <span class="hljs-tag"><div class="flex items-center mb-4">
+                        <span class="hljs-tag"><div class="bg-purple-100 p-3 rounded-full">
+                            <span class="hljs-tag"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <span class="hljs-tag"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                            <span class="hljs-tag"></svg>
+                        <span class="hljs-tag"></div>
+                        <span class="hljs-tag"><h3 class="ml-4 text-xl font-semibold text-gray-800">Industry Trends<span class="hljs-tag"></h3>
+                    <span class="hljs-tag"></div>
+                    <span class="hljs-tag"><p class="text-gray-600">Stay updated on the latest AI trends, research papers, and industry developments.<span class="hljs-tag"></p>
+                <span class="hljs-tag"></div>
+            <span class="hljs-tag"></div>
+        <span class="hljs-tag"></section>
+    
+        <span class="hljs-tag"><section class="mb-12">
+            <span class="hljs-tag"><div class="bg-white rounded-xl shadow-md p-6">
+                <span class="hljs-tag"><h2 class="text-2xl font-bold text-gray-800 mb-4">Interview Simulator<span class="hljs-tag"></h2>
+                <span class="hljs-tag"><p class="text-gray-600 mb-6">Practice with AI-generated interview questions tailored to your experience level and role.<span class="hljs-tag"></p>
+    
+                <span class="hljs-tag"><div class="mb-6">
+                    <span class="hljs-tag"><label for="role" class="block text-sm font-medium text-gray-700 mb-2">Target Role<span class="hljs-tag"></label>
+                    <span class="hljs-tag"><select id="role" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                        <span class="hljs-tag"><option value="ai-engineer">AI Engineer<span class="hljs-tag"></option>
+                        <span class="hljs-tag"><option value="ml-engineer">Machine Learning Engineer<span class="hljs-tag"></option>
+                        <span class="hljs-tag"><option value="data-scientist">Data Scientist with AI Focus<span class="hljs-tag"></option>
+                        <span class="hljs-tag"><option value="ai-researcher">AI Research Scientist<span class="hljs-tag"></option>
+                        <span class="hljs-tag"><option value="nlp-specialist">NLP Specialist<span class="hljs-tag"></option>
+                        <span class="hljs-tag"><option value="computer-vision">Computer Vision Engineer<span class="hljs-tag"></option>
+                    <span class="hljs-tag"></select>
+                <span class="hljs-tag"></div>
+    
+                <span class="hljs-tag"><div class="mb-6">
+                    <span class="hljs-tag"><label for="experience" class="block text-sm font-medium text-gray-700 mb-2">Experience Level<span class="hljs-tag"></label>
+                    <span class="hljs-tag"><select id="experience" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                        <span class="hljs-tag"><option value="entry">Entry Level (0-2 years)<span class="hljs-tag"></option>
+                        <span class="hljs-tag"><option value="mid">Mid Level (3-5 years)<span class="hljs-tag"></option>
+                        <span class="hljs-tag"><option value="senior">Senior Level (6+ years)<span class="hljs-tag"></option>
+                    <span class="hljs-tag"></select>
+                <span class="hljs-tag"></div>
+    
+                <span class="hljs-tag"><button id="generate-question" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-md transition duration-300 flex items-center justify-center">
+                    <span class="hljs-tag"><span>Generate Interview Question<span class="hljs-tag"></span>
+                    <span class="hljs-tag"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                        <span class="hljs-tag"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd" />
+                    <span class="hljs-tag"></svg>
+                <span class="hljs-tag"></button>
+    
+                <span class="hljs-tag"><div id="question-container" class="mt-8 hidden">
+                    <span class="hljs-tag"><div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
+                        <span class="hljs-tag"><h3 class="text-lg font-semibold text-gray-800 mb-2">Question:<span class="hljs-tag"></h3>
+                        <span class="hljs-tag"><p id="interview-question" class="text-gray-700 mb-6"><span class="hljs-tag"></p>
+    
+                        <span class="hljs-tag"><div class="mb-4">
+                            <span class="hljs-tag"><label for="user-answer" class="block text-sm font-medium text-gray-700 mb-2">Your Answer:<span class="hljs-tag"></label>
+                            <span class="hljs-tag"><textarea id="user-answer" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Type your answer here..."><span class="hljs-tag"></textarea>
+                        <span class="hljs-tag"></div>
+    
+                        <span class="hljs-tag"><button id="check-answer" class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md transition duration-300">
+                            Check Answer
+                        <span class="hljs-tag"></button>
+                    <span class="hljs-tag"></div>
+    
+                    <span class="hljs-tag"><div id="feedback-container" class="mt-6 hidden">
+                        <span class="hljs-tag"><div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                            <span class="hljs-tag"><h3 class="text-lg font-semibold text-gray-800 mb-2">Feedback:<span class="hljs-tag"></h3>
+                            <span class="hljs-tag"><div id="answer-feedback" class="text-gray-700"><span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div class="mt-4 pt-4 border-t border-blue-200">
+                                <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-2">Sample Strong Answer:<span class="hljs-tag"></h4>
+                                <span class="hljs-tag"><p id="sample-answer" class="text-gray-700"><span class="hljs-tag"></p>
+                            <span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div class="mt-4 pt-4 border-t border-blue-200">
+                                <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-2">Key Points to Remember:<span class="hljs-tag"></h4>
+                                <span class="hljs-tag"><ul id="key-points" class="list-disc pl-5 text-gray-700 space-y-1"><span class="hljs-tag"></ul>
+                            <span class="hljs-tag"></div>
+                        <span class="hljs-tag"></div>
+                    <span class="hljs-tag"></div>
+                <span class="hljs-tag"></div>
+            <span class="hljs-tag"></div>
+        <span class="hljs-tag"></section>
+    
+        <span class="hljs-tag"><section class="mb-12">
+            <span class="hljs-tag"><h2 class="text-2xl font-bold text-gray-800 mb-6">Your Interview Progress<span class="hljs-tag"></h2>
+            <span class="hljs-tag"><div class="bg-white rounded-xl shadow-md p-6">
+                <span class="hljs-tag"><div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <span class="hljs-tag"><div>
+                        <span class="hljs-tag"><h3 class="text-lg font-semibold text-gray-800 mb-4">Topics Mastered<span class="hljs-tag"></h3>
+                        <span class="hljs-tag"><div class="space-y-3">
+                            <span class="hljs-tag"><div class="flex items-center">
+                                <span class="hljs-tag"><div class="w-full bg-gray-200 rounded-full h-4">
+                                    <span class="hljs-tag"><div class="bg-green-500 h-4 rounded-full" style="width: 85%"><span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+                                <span class="hljs-tag"><span class="ml-4 text-sm font-medium text-gray-700">Machine Learning (85%)<span class="hljs-tag"></span>
+                            <span class="hljs-tag"></div>
+                            <span class="hljs-tag"><div class="flex items-center">
+                                <span class="hljs-tag"><div class="w-full bg-gray-200 rounded-full h-4">
+                                    <span class="hljs-tag"><div class="bg-green-500 h-4 rounded-full" style="width: 70%"><span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+                                <span class="hljs-tag"><span class="ml-4 text-sm font-medium text-gray-700">Deep Learning (70%)<span class="hljs-tag"></span>
+                            <span class="hljs-tag"></div>
+                            <span class="hljs-tag"><div class="flex items-center">
+                                <span class="hljs-tag"><div class="w-full bg-gray-200 rounded-full h-4">
+                                    <span class="hljs-tag"><div class="bg-green-500 h-4 rounded-full" style="width: 60%"><span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+                                <span class="hljs-tag"><span class="ml-4 text-sm font-medium text-gray-700">NLP (60%)<span class="hljs-tag"></span>
+                            <span class="hljs-tag"></div>
+                            <span class="hljs-tag"><div class="flex items-center">
+                                <span class="hljs-tag"><div class="w-full bg-gray-200 rounded-full h-4">
+                                    <span class="hljs-tag"><div class="bg-green-500 h-4 rounded-full" style="width: 50%"><span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+                                <span class="hljs-tag"><span class="ml-4 text-sm font-medium text-gray-700">Computer Vision (50%)<span class="hljs-tag"></span>
+                            <span class="hljs-tag"></div>
+                            <span class="hljs-tag"><div class="flex items-center">
+                                <span class="hljs-tag"><div class="w-full bg-gray-200 rounded-full h-4">
+                                    <span class="hljs-tag"><div class="bg-green-500 h-4 rounded-full" style="width: 75%"><span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+                                <span class="hljs-tag"><span class="ml-4 text-sm font-medium text-gray-700">MLOps (75%)<span class="hljs-tag"></span>
+                            <span class="hljs-tag"></div>
+                        <span class="hljs-tag"></div>
+                    <span class="hljs-tag"></div>
+    
+                    <span class="hljs-tag"><div>
+                        <span class="hljs-tag"><h3 class="text-lg font-semibold text-gray-800 mb-4">Recent Activity<span class="hljs-tag"></h3>
+                        <span class="hljs-tag"><div class="space-y-4">
+                            <span class="hljs-tag"><div class="flex items-start">
+                                <span class="hljs-tag"><div class="flex-shrink-0">
+                                    <span class="hljs-tag"><div class="bg-blue-100 p-2 rounded-full">
+                                        <span class="hljs-tag"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <span class="hljs-tag"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                        <span class="hljs-tag"></svg>
+                                    <span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+                                <span class="hljs-tag"><div class="ml-3">
+                                    <span class="hljs-tag"><p class="text-sm font-medium text-gray-800">Completed 5 Technical Questions<span class="hljs-tag"></p>
+                                    <span class="hljs-tag"><p class="text-xs text-gray-500">Today at 2:30 PM<span class="hljs-tag"></p>
+                                <span class="hljs-tag"></div>
+                            <span class="hljs-tag"></div>
+                            <span class="hljs-tag"><div class="flex items-start">
+                                <span class="hljs-tag"><div class="flex-shrink-0">
+                                    <span class="hljs-tag"><div class="bg-green-100 p-2 rounded-full">
+                                        <span class="hljs-tag"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <span class="hljs-tag"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        <span class="hljs-tag"></svg>
+                                    <span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+                                <span class="hljs-tag"><div class="ml-3">
+                                    <span class="hljs-tag"><p class="text-sm font-medium text-gray-800">Reviewed Resume Tips<span class="hljs-tag"></p>
+                                    <span class="hljs-tag"><p class="text-xs text-gray-500">Yesterday at 4:15 PM<span class="hljs-tag"></p>
+                                <span class="hljs-tag"></div>
+                            <span class="hljs-tag"></div>
+                            <span class="hljs-tag"><div class="flex items-start">
+                                <span class="hljs-tag"><div class="flex-shrink-0">
+                                    <span class="hljs-tag"><div class="bg-yellow-100 p-2 rounded-full">
+                                        <span class="hljs-tag"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <span class="hljs-tag"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        <span class="hljs-tag"></svg>
+                                    <span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+                                <span class="hljs-tag"><div class="ml-3">
+                                    <span class="hljs-tag"><p class="text-sm font-medium text-gray-800">Practiced Behavioral Questions<span class="hljs-tag"></p>
+                                    <span class="hljs-tag"><p class="text-xs text-gray-500">2 days ago<span class="hljs-tag"></p>
+                                <span class="hljs-tag"></div>
+                            <span class="hljs-tag"></div>
+                        <span class="hljs-tag"></div>
+                    <span class="hljs-tag"></div>
+                <span class="hljs-tag"></div>
+            <span class="hljs-tag"></div>
+        <span class="hljs-tag"></section>
+    <span class="hljs-tag"></main>
+    
+    <!-- Modal Template -->
+    <span class="hljs-tag"><div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden modal">
+        <span class="hljs-tag"><div class="bg-white rounded-xl shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto mx-4">
+            <span class="hljs-tag"><div class="p-6 border-b border-gray-200">
+                <span class="hljs-tag"><div class="flex justify-between items-center">
+                    <span class="hljs-tag"><h2 id="modal-title" class="text-2xl font-bold text-gray-800"><span class="hljs-tag"></h2>
+                    <span class="hljs-tag"><button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                        <span class="hljs-tag"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <span class="hljs-tag"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        <span class="hljs-tag"></svg>
+                    <span class="hljs-tag"></button>
+                <span class="hljs-tag"></div>
+            <span class="hljs-tag"></div>
+            <span class="hljs-tag"><div id="modal-content" class="p-6"><span class="hljs-tag"></div>
+        <span class="hljs-tag"></div>
+    <span class="hljs-tag"></div>
+    
+    <span class="hljs-tag"><footer class="bg-gray-800 text-white py-8 px-4">
+        <span class="hljs-tag"><div class="container mx-auto max-w-6xl">
+            <span class="hljs-tag"><div class="flex flex-col md:flex-row justify-between">
+                <span class="hljs-tag"><div class="mb-6 md:mb-0">
+                    <span class="hljs-tag"><h3 class="text-xl font-bold mb-2">AI Interview Preparation Tool<span class="hljs-tag"></h3>
+                    <span class="hljs-tag"><p class="text-gray-400">Your comprehensive guide to acing AI engineering interviews<span class="hljs-tag"></p>
+                <span class="hljs-tag"></div>
+                <span class="hljs-tag"><div>
+                    <span class="hljs-tag"><h4 class="text-lg font-semibold mb-2">Additional Resources<span class="hljs-tag"></h4>
+                    <span class="hljs-tag"><ul class="space-y-2 text-gray-400">
+                        <span class="hljs-tag"><li><span class="hljs-tag"><a href="#" class="hover:text-blue-400 transition duration-300">AI Engineering Roadmap<span class="hljs-tag"></a><span class="hljs-tag"></li>
+                        <span class="hljs-tag"><li><span class="hljs-tag"><a href="#" class="hover:text-blue-400 transition duration-300">Top AI Research Papers<span class="hljs-tag"></a><span class="hljs-tag"></li>
+                        <span class="hljs-tag"><li><span class="hljs-tag"><a href="#" class="hover:text-blue-400 transition duration-300">Industry Salary Guide<span class="hljs-tag"></a><span class="hljs-tag"></li>
+                    <span class="hljs-tag"></ul>
+                <span class="hljs-tag"></div>
+            <span class="hljs-tag"></div>
+            <span class="hljs-tag"><div class="mt-8 pt-6 border-t border-gray-700 text-gray-400 text-sm">
+                <span class="hljs-tag"><p>© 2023 AI Interview Preparation Tool. All rights reserved.<span class="hljs-tag"></p>
+            <span class="hljs-tag"></div>
+        <span class="hljs-tag"></div>
+    <span class="hljs-tag"></footer>
+    
+    <span class="hljs-tag"><script><span class="language-handlebars"><span class="language-xml">
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide loading screen after content loads
+            setTimeout(() => {
+                document.getElementById('loading').classList.add('opacity-0');
+                setTimeout(() => {
+                    document.getElementById('loading').classList.add('hidden');
+                }, 300);
+            }, 800);
+    
+            // Topic content data
+            const topicContent = {
+                technical: {
+                    title: "Technical Concepts for AI Engineers",
+                    content: `
+                        <span class="hljs-tag"><div class="space-y-6">
+                            <span class="hljs-tag"><div>
+                                <span class="hljs-tag"><h3 class="text-xl font-semibold text-gray-800 mb-3">Core Machine Learning Concepts<span class="hljs-tag"></h3>
+                                <span class="hljs-tag"><div class="bg-gray-50 rounded-lg p-4 mb-4">
+                                    <span class="hljs-tag"><ul class="list-disc pl-5 space-y-2">
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Supervised vs. Unsupervised Learning:<span class="hljs-tag"></strong> Understand the fundamental differences and when to apply each approach.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Model Evaluation Metrics:<span class="hljs-tag"></strong> Be prepared to discuss precision, recall, F1-score, ROC curves, and when to use each.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Bias-Variance Tradeoff:<span class="hljs-tag"></strong> Explain this concept and how it affects model performance.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Regularization Techniques:<span class="hljs-tag"></strong> Know L1/L2 regularization, dropout, and early stopping.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Ensemble Methods:<span class="hljs-tag"></strong> Understand bagging, boosting, stacking, and random forests.<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"></ul>
+                                <span class="hljs-tag"></div>
+                            <span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div>
+                                <span class="hljs-tag"><h3 class="text-xl font-semibold text-gray-800 mb-3">Deep Learning Fundamentals<span class="hljs-tag"></h3>
+                                <span class="hljs-tag"><div class="bg-gray-50 rounded-lg p-4 mb-4">
+                                    <span class="hljs-tag"><ul class="list-disc pl-5 space-y-2">
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Neural Network Architectures:<span class="hljs-tag"></strong> CNNs, RNNs, LSTMs, GRUs, Transformers, and their applications.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Activation Functions:<span class="hljs-tag"></strong> ReLU, Sigmoid, Tanh, Softmax - their properties and use cases.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Backpropagation:<span class="hljs-tag"></strong> Be able to explain the algorithm and its importance.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Optimization Algorithms:<span class="hljs-tag"></strong> SGD, Adam, RMSprop - understand the differences.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Transfer Learning:<span class="hljs-tag"></strong> Explain the concept and when to use it.<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"></ul>
+                                <span class="hljs-tag"></div>
+                            <span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div>
+                                <span class="hljs-tag"><h3 class="text-xl font-semibold text-gray-800 mb-3">Natural Language Processing<span class="hljs-tag"></h3>
+                                <span class="hljs-tag"><div class="bg-gray-50 rounded-lg p-4 mb-4">
+                                    <span class="hljs-tag"><ul class="list-disc pl-5 space-y-2">
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Text Preprocessing:<span class="hljs-tag"></strong> Tokenization, stemming, lemmatization, stop word removal.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Word Embeddings:<span class="hljs-tag"></strong> Word2Vec, GloVe, FastText, and contextual embeddings.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Language Models:<span class="hljs-tag"></strong> N-grams, RNN-based models, Transformer-based models.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Attention Mechanisms:<span class="hljs-tag"></strong> Self-attention, multi-head attention in transformers.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Modern NLP Architectures:<span class="hljs-tag"></strong> BERT, GPT, T5, and their variants.<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"></ul>
+                                <span class="hljs-tag"></div>
+                            <span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div>
+                                <span class="hljs-tag"><h3 class="text-xl font-semibold text-gray-800 mb-3">Computer Vision<span class="hljs-tag"></h3>
+                                <span class="hljs-tag"><div class="bg-gray-50 rounded-lg p-4 mb-4">
+                                    <span class="hljs-tag"><ul class="list-disc pl-5 space-y-2">
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Image Processing:<span class="hljs-tag"></strong> Filtering, edge detection, feature extraction.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>CNN Architectures:<span class="hljs-tag"></strong> VGG, ResNet, Inception, EfficientNet.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Object Detection:<span class="hljs-tag"></strong> YOLO, SSD, Faster R-CNN, and their differences.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Semantic Segmentation:<span class="hljs-tag"></strong> U-Net, FCN, DeepLab.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>GANs:<span class="hljs-tag"></strong> Basic architecture, training challenges, applications.<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"></ul>
+                                <span class="hljs-tag"></div>
+                            <span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div>
+                                <span class="hljs-tag"><h3 class="text-xl font-semibold text-gray-800 mb-3">MLOps & Deployment<span class="hljs-tag"></h3>
+                                <span class="hljs-tag"><div class="bg-gray-50 rounded-lg p-4 mb-4">
+                                    <span class="hljs-tag"><ul class="list-disc pl-5 space-y-2">
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Model Versioning:<span class="hljs-tag"></strong> Tools and best practices for tracking model versions.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Containerization:<span class="hljs-tag"></strong> Docker for ML applications, microservices architecture.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>CI/CD for ML:<span class="hljs-tag"></strong> Automated testing, deployment pipelines.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Monitoring:<span class="hljs-tag"></strong> Drift detection, performance metrics, alerting systems.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Scaling:<span class="hljs-tag"></strong> Horizontal vs. vertical scaling, distributed training.<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"></ul>
+                                <span class="hljs-tag"></div>
+                            <span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div>
+                                <span class="hljs-tag"><h3 class="text-xl font-semibold text-gray-800 mb-3">Frameworks & Tools<span class="hljs-tag"></h3>
+                                <span class="hljs-tag"><div class="bg-gray-50 rounded-lg p-4">
+                                    <span class="hljs-tag"><ul class="list-disc pl-5 space-y-2">
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Deep Learning:<span class="hljs-tag"></strong> PyTorch, TensorFlow, Keras - know at least one in depth.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>ML Libraries:<span class="hljs-tag"></strong> Scikit-learn, XGBoost, LightGBM.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Data Processing:<span class="hljs-tag"></strong> Pandas, NumPy, Dask for large datasets.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Experiment Tracking:<span class="hljs-tag"></strong> MLflow, Weights & Biases, TensorBoard.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li><span class="hljs-tag"><strong>Deployment:<span class="hljs-tag"></strong> TensorFlow Serving, TorchServe, ONNX, Triton.<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"></ul>
+                                <span class="hljs-tag"></div>
+                            <span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+                                <span class="hljs-tag"><h4 class="font-semibold text-blue-800 mb-2">Interview Tip:<span class="hljs-tag"></h4>
+                                <span class="hljs-tag"><p class="text-blue-700">For technical concepts, interviewers value depth over breadth. Be prepared to dive deep into a few areas rather than having surface-level knowledge of many topics. Always relate concepts to your practical experience.<span class="hljs-tag"></p>
+                            <span class="hljs-tag"></div>
+                        <span class="hljs-tag"></div>
+                    `
+                },
+                questions: {
+                    title: "Practice Interview Questions",
+                    content: `
+                        <span class="hljs-tag"><div class="space-y-6">
+                            <span class="hljs-tag"><div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded mb-6">
+                                <span class="hljs-tag"><h4 class="font-semibold text-blue-800 mb-2">How to Use This Section:<span class="hljs-tag"></h4>
+                                <span class="hljs-tag"><p class="text-blue-700">Review these common interview questions, prepare your answers, and practice delivering them confidently. Consider recording yourself to review your delivery.<span class="hljs-tag"></p>
+                            <span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div class="mb-8">
+                                <span class="hljs-tag"><h3 class="text-xl font-semibold text-gray-800 mb-4">Technical Questions<span class="hljs-tag"></h3>
+    
+                                <span class="hljs-tag"><div class="space-y-4">
+                                    <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg shadow-sm">
+                                        <span class="hljs-tag"><div class="p-4 border-b border-gray-200">
+                                            <span class="hljs-tag"><h4 class="font-medium text-gray-800">1. Explain the difference between bagging and boosting algorithms.<span class="hljs-tag"></h4>
+                                        <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"><div class="p-4 bg-gray-50">
+                                            <span class="hljs-tag"><p class="text-gray-700 mb-3"><span class="hljs-tag"><strong>Sample Answer:<span class="hljs-tag"></strong> Bagging and boosting are both ensemble techniques but work differently. Bagging (Bootstrap Aggregating) builds multiple independent models in parallel using random subsets of data and averages their predictions to reduce variance and overfitting. Random Forest is a popular bagging algorithm. Boosting, on the other hand, builds models sequentially where each model tries to correct the errors of its predecessors, focusing on difficult examples. Boosting reduces bias and builds strong learners from weak ones. Examples include AdaBoost, Gradient Boosting, and XGBoost. While bagging is effective against overfitting, boosting can sometimes overfit if not properly tuned.<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+    
+                                    <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg shadow-sm">
+                                        <span class="hljs-tag"><div class="p-4 border-b border-gray-200">
+                                            <span class="hljs-tag"><h4 class="font-medium text-gray-800">2. How would you handle imbalanced datasets in classification problems?<span class="hljs-tag"></h4>
+                                        <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"><div class="p-4 bg-gray-50">
+                                            <span class="hljs-tag"><p class="text-gray-700 mb-3"><span class="hljs-tag"><strong>Sample Answer:<span class="hljs-tag"></strong> For imbalanced datasets, I'd use several approaches depending on the specific problem: (1) Resampling techniques like oversampling the minority class (SMOTE), undersampling the majority class, or a combination of both; (2) Using appropriate evaluation metrics like precision-recall AUC, F1-score, or Cohen's Kappa instead of accuracy; (3) Adjusting class weights in the loss function to penalize misclassification of minority classes more heavily; (4) Using anomaly detection approaches for extreme imbalances; (5) Ensemble methods like balanced random forests; and (6) Collecting more data for the minority class when possible. The choice depends on factors like the imbalance ratio, dataset size, and domain-specific considerations.<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+    
+                                    <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg shadow-sm">
+                                        <span class="hljs-tag"><div class="p-4 border-b border-gray-200">
+                                            <span class="hljs-tag"><h4 class="font-medium text-gray-800">3. Explain how attention mechanisms work in transformer models.<span class="hljs-tag"></h4>
+                                        <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"><div class="p-4 bg-gray-50">
+                                            <span class="hljs-tag"><p class="text-gray-700 mb-3"><span class="hljs-tag"><strong>Sample Answer:<span class="hljs-tag"></strong> Attention mechanisms in transformers allow the model to focus on different parts of the input sequence when producing each element of the output. The key innovation in transformers is self-attention, particularly multi-head attention. It works by computing query (Q), key (K), and value (V) matrices from the input embeddings. The attention scores are calculated as the dot product of Q and K, scaled by the square root of their dimension, and passed through a softmax to get weights. These weights determine how much each value contributes to the output. Multi-head attention runs this process in parallel with different learned projections, allowing the model to capture different types of relationships simultaneously. This approach eliminates the sequential computation requirement of RNNs, enabling more parallelization and better handling of long-range dependencies.<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+    
+                                    <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg shadow-sm">
+                                        <span class="hljs-tag"><div class="p-4 border-b border-gray-200">
+                                            <span class="hljs-tag"><h4 class="font-medium text-gray-800">4. What techniques would you use to prevent overfitting in deep neural networks?<span class="hljs-tag"></h4>
+                                        <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"><div class="p-4 bg-gray-50">
+                                            <span class="hljs-tag"><p class="text-gray-700 mb-3"><span class="hljs-tag"><strong>Sample Answer:<span class="hljs-tag"></strong> To prevent overfitting in deep neural networks, I use multiple techniques: (1) Regularization methods like L1/L2 regularization to penalize large weights; (2) Dropout, which randomly deactivates neurons during training; (3) Early stopping by monitoring validation performance; (4) Data augmentation to artificially increase training data diversity; (5) Batch normalization to stabilize and accelerate training; (6) Reducing model complexity by decreasing layers or neurons; (7) Transfer learning when working with limited data; (8) K-fold cross-validation for more robust evaluation; and (9) Ensemble methods to combine multiple models. The specific combination depends on the dataset size, model architecture, and problem complexity.<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+    
+                                    <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg shadow-sm">
+                                        <span class="hljs-tag"><div class="p-4 border-b border-gray-200">
+                                            <span class="hljs-tag"><h4 class="font-medium text-gray-800">5. How would you approach building a recommendation system for an e-commerce platform?<span class="hljs-tag"></h4>
+                                        <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"><div class="p-4 bg-gray-50">
+                                            <span class="hljs-tag"><p class="text-gray-700 mb-3"><span class="hljs-tag"><strong>Sample Answer:<span class="hljs-tag"></strong> For an e-commerce recommendation system, I'd use a multi-stage approach: First, I'd analyze available data (user behavior, purchase history, product metadata, etc.) and define clear objectives (increase CTR, conversion rate, etc.). I'd start with simple but effective methods like collaborative filtering (user-based and item-based) and content-based filtering. As the system matures, I'd implement hybrid approaches combining multiple techniques and explore more advanced models like matrix factorization, deep learning-based recommenders (NCF), or sequence models for session-based recommendations. I'd design the system with real-time capabilities to capture immediate user interests and implement A/B testing to continuously evaluate and improve recommendations. For cold start problems, I'd use popularity-based recommendations and content features. Throughout development, I'd monitor key metrics like diversity, novelty, and serendipity alongside business KPIs.<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+                            <span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div>
+                                <span class="hljs-tag"><h3 class="text-xl font-semibold text-gray-800 mb-4">System Design Questions<span class="hljs-tag"></h3>
+    
+                                <span class="hljs-tag"><div class="space-y-4">
+                                    <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg shadow-sm">
+                                        <span class="hljs-tag"><div class="p-4 border-b border-gray-200">
+                                            <span class="hljs-tag"><h4 class="font-medium text-gray-800">1. Design an ML system to detect fraudulent transactions for a financial company.<span class="hljs-tag"></h4>
+                                        <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"><div class="p-4 bg-gray-50">
+                                            <span class="hljs-tag"><p class="text-gray-700 mb-3"><span class="hljs-tag"><strong>Key Components to Address:<span class="hljs-tag"></strong><span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                                <span class="hljs-tag"><li>Data pipeline for real-time transaction processing<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Feature engineering for transaction data<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Model selection (consider class imbalance)<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Real-time scoring system with low latency<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Explainability for regulatory compliance<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Monitoring for concept drift<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Feedback loop for continuous improvement<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"></ul>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+    
+                                    <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg shadow-sm">
+                                        <span class="hljs-tag"><div class="p-4 border-b border-gray-200">
+                                            <span class="hljs-tag"><h4 class="font-medium text-gray-800">2. How would you design a large-scale image classification service?<span class="hljs-tag"></h4>
+                                        <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"><div class="p-4 bg-gray-50">
+                                            <span class="hljs-tag"><p class="text-gray-700 mb-3"><span class="hljs-tag"><strong>Key Components to Address:<span class="hljs-tag"></strong><span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                                <span class="hljs-tag"><li>Scalable image preprocessing pipeline<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Model architecture selection and training strategy<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Model compression techniques for deployment<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Load balancing and horizontal scaling<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Caching strategy for common requests<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Monitoring and retraining pipeline<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>API design and documentation<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"></ul>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+    
+                                    <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg shadow-sm">
+                                        <span class="hljs-tag"><div class="p-4 border-b border-gray-200">
+                                            <span class="hljs-tag"><h4 class="font-medium text-gray-800">3. Design a content recommendation system for a streaming platform.<span class="hljs-tag"></h4>
+                                        <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"><div class="p-4 bg-gray-50">
+                                            <span class="hljs-tag"><p class="text-gray-700 mb-3"><span class="hljs-tag"><strong>Key Components to Address:<span class="hljs-tag"></strong><span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                                <span class="hljs-tag"><li>Data collection and feature engineering<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Candidate generation (collaborative filtering, content-based)<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Ranking and personalization models<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>A/B testing framework<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Real-time and batch processing systems<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Cold start problem solutions<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Diversity and exploration strategies<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"></ul>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+                            <span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded mt-6">
+                                <span class="hljs-tag"><h4 class="font-semibold text-yellow-800 mb-2">Practice Tip:<span class="hljs-tag"></h4>
+                                <span class="hljs-tag"><p class="text-yellow-700">When practicing system design questions, draw diagrams to visualize your solution. Start with high-level components before diving into details. Always consider scalability, reliability, and monitoring aspects.<span class="hljs-tag"></p>
+                            <span class="hljs-tag"></div>
+                        <span class="hljs-tag"></div>
+                    `
+                },
+                resume: {
+                    title: "Resume & Portfolio Optimization",
+                    content: `
+                        <span class="hljs-tag"><div class="space-y-6">
+                            <span class="hljs-tag"><div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded mb-6">
+                                <span class="hljs-tag"><h4 class="font-semibold text-blue-800 mb-2">Resume Strategy:<span class="hljs-tag"></h4>
+                                <span class="hljs-tag"><p class="text-blue-700">Your resume is often the first impression recruiters have of you. For AI engineering roles, it should highlight your technical expertise, project experience, and measurable impact.<span class="hljs-tag"></p>
+                            <span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div class="mb-8">
+                                <span class="hljs-tag"><h3 class="text-xl font-semibold text-gray-800 mb-4">Resume Structure for AI Engineers<span class="hljs-tag"></h3>
+    
+                                <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5 mb-6">
+                                    <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">1. Professional Summary<span class="hljs-tag"></h4>
+                                    <span class="hljs-tag"><div class="space-y-3">
+                                        <span class="hljs-tag"><p class="text-gray-700">Start with a concise 2-3 sentence summary highlighting:<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <span class="hljs-tag"><li>Years of experience in AI/ML<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Specialization areas (NLP, computer vision, etc.)<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Key achievements or skills that set you apart<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"></ul>
+    
+                                        <span class="hljs-tag"><div class="mt-3">
+                                            <span class="hljs-tag"><p class="text-sm font-medium text-gray-700 mb-2">Example:<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><div class="bg-gray-50 p-3 rounded border border-gray-200">
+                                                <span class="hljs-tag"><p class="text-gray-700 italic">"Machine Learning Engineer with 5+ years of experience specializing in NLP and recommendation systems. Proven track record of deploying models that improved user engagement by 35% and reduced computational costs by 40%. Experienced in the full ML lifecycle from research to production."<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+    
+                                <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5 mb-6">
+                                    <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">2. Technical Skills<span class="hljs-tag"></h4>
+                                    <span class="hljs-tag"><div class="space-y-3">
+                                        <span class="hljs-tag"><p class="text-gray-700">Organize your skills into clear categories:<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <span class="hljs-tag"><li><span class="hljs-tag"><strong>Programming Languages:<span class="hljs-tag"></strong> Python, R, Java, etc.<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li><span class="hljs-tag"><strong>ML/DL Frameworks:<span class="hljs-tag"></strong> TensorFlow, PyTorch, Scikit-learn, etc.<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li><span class="hljs-tag"><strong>Cloud & MLOps:<span class="hljs-tag"></strong> AWS SageMaker, Azure ML, Kubeflow, MLflow, etc.<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li><span class="hljs-tag"><strong>Data Processing:<span class="hljs-tag"></strong> Spark, Hadoop, SQL, etc.<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li><span class="hljs-tag"><strong>Specialized Skills:<span class="hljs-tag"></strong> NLP, Computer Vision, Reinforcement Learning, etc.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"></ul>
+    
+                                        <span class="hljs-tag"><div class="bg-yellow-50 p-3 rounded border border-yellow-200 mt-3">
+                                            <span class="hljs-tag"><p class="text-yellow-800"><span class="hljs-tag"><strong>Tip:<span class="hljs-tag"></strong> Tailor your skills section to match the job description, placing the most relevant skills first. Avoid listing skills you're not comfortable being tested on during interviews.<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+    
+                                <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5 mb-6">
+                                    <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">3. Professional Experience<span class="hljs-tag"></h4>
+                                    <span class="hljs-tag"><div class="space-y-3">
+                                        <span class="hljs-tag"><p class="text-gray-700">For each role, focus on:<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <span class="hljs-tag"><li>Projects you worked on and your specific contributions<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Technologies and methodologies you used<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Quantifiable results and business impact<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Scale of data and models you worked with<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"></ul>
+    
+                                        <span class="hljs-tag"><div class="mt-3">
+                                            <span class="hljs-tag"><p class="text-sm font-medium text-gray-700 mb-2">Example bullet point:<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><div class="bg-gray-50 p-3 rounded border border-gray-200">
+                                                <span class="hljs-tag"><p class="text-gray-700 italic">"Developed and deployed a BERT-based sentiment analysis model that improved customer feedback classification accuracy by 27%, processing 500K+ reviews daily and reducing manual review time by 15 hours per week."<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+    
+                                <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5 mb-6">
+                                    <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">4. Projects<span class="hljs-tag"></h4>
+                                    <span class="hljs-tag"><div class="space-y-3">
+                                        <span class="hljs-tag"><p class="text-gray-700">For personal or academic projects:<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <span class="hljs-tag"><li>Include a link to GitHub repositories or demos<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Explain the problem, approach, and technologies used<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Highlight any novel approaches or challenges overcome<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Mention performance metrics and results<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"></ul>
+    
+                                        <span class="hljs-tag"><div class="bg-green-50 p-3 rounded border border-green-200 mt-3">
+                                            <span class="hljs-tag"><p class="text-green-800"><span class="hljs-tag"><strong>Pro Tip:<span class="hljs-tag"></strong> For each project, prepare a 30-second explanation and a 2-minute deep dive for interviews. Be ready to discuss technical decisions and alternatives considered.<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+    
+                                <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5">
+                                    <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">5. Education & Certifications<span class="hljs-tag"></h4>
+                                    <span class="hljs-tag"><div class="space-y-3">
+                                        <span class="hljs-tag"><p class="text-gray-700">Include:<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <span class="hljs-tag"><li>Degrees with specializations relevant to AI/ML<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Industry certifications (AWS ML Specialty, TensorFlow Developer, etc.)<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Relevant coursework or research if you're early in your career<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Publications or conference presentations<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"></ul>
+                                    <span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+                            <span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div>
+                                <span class="hljs-tag"><h3 class="text-xl font-semibold text-gray-800 mb-4">Portfolio Development<span class="hljs-tag"></h3>
+    
+                                <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5 mb-6">
+                                    <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">GitHub Portfolio Best Practices<span class="hljs-tag"></h4>
+                                    <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-700 space-y-2">
+                                        <span class="hljs-tag"><li>Maintain 3-5 high-quality projects that showcase different skills<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li>Write detailed READMEs with problem statements, approaches, and results<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li>Include clear documentation and comments in your code<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li>Demonstrate good software engineering practices (testing, modular code)<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li>Show progression of your work through commit history<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"><li>Include requirements files and setup instructions<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"></ul>
+                                <span class="hljs-tag"></div>
+    
+                                <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5">
+                                    <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">Project Ideas to Showcase Skills<span class="hljs-tag"></h4>
+                                    <span class="hljs-tag"><div class="space-y-4">
+                                        <span class="hljs-tag"><div>
+                                            <span class="hljs-tag"><p class="font-medium text-gray-700">1. End-to-End ML Pipeline<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><p class="text-gray-600">Build a complete pipeline from data collection to deployment, showing your MLOps skills.<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"><div>
+                                            <span class="hljs-tag"><p class="font-medium text-gray-700">2. Model Optimization Project<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><p class="text-gray-600">Take an existing model and improve its performance or efficiency through techniques like quantization or knowledge distillation.<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"><div>
+                                            <span class="hljs-tag"><p class="font-medium text-gray-700">3. Domain-Specific Application<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><p class="text-gray-600">Apply AI to a specific domain (healthcare, finance, etc.) to show your ability to understand business problems.<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"><div>
+                                            <span class="hljs-tag"><p class="font-medium text-gray-700">4. Research Implementation<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><p class="text-gray-600">Implement a recent research paper, showing your ability to understand and apply cutting-edge techniques.<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"><div>
+                                            <span class="hljs-tag"><p class="font-medium text-gray-700">5. Interactive Demo<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><p class="text-gray-600">Create a web application that demonstrates your model in action, showing both ML and software engineering skills.<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+                            <span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded mt-6">
+                                <span class="hljs-tag"><h4 class="font-semibold text-indigo-800 mb-2">Final Resume Tips:<span class="hljs-tag"></h4>
+                                <span class="hljs-tag"><ul class="list-disc pl-5 text-indigo-700 space-y-1">
+                                    <span class="hljs-tag"><li>Keep your resume to 1-2 pages maximum<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"><li>Use ATS-friendly formatting with standard section headings<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"><li>Quantify achievements whenever possible<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"><li>Tailor your resume for each application, emphasizing relevant experience<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"><li>Have someone with technical knowledge review your resume<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"><li>Update your LinkedIn profile to match your resume<span class="hljs-tag"></li>
+                                <span class="hljs-tag"></ul>
+                            <span class="hljs-tag"></div>
+                        <span class="hljs-tag"></div>
+                    `
+                },
+                projects: {
+                    title: "Project Showcase Strategies",
+                    content: `
+                        <span class="hljs-tag"><div class="space-y-6">
+                            <span class="hljs-tag"><div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded mb-6">
+                                <span class="hljs-tag"><h4 class="font-semibold text-blue-800 mb-2">Project Showcase Strategy:<span class="hljs-tag"></h4>
+                                <span class="hljs-tag"><p class="text-blue-700">Effectively presenting your AI projects during interviews can significantly strengthen your candidacy. This section will help you structure your project presentations and highlight the most impactful aspects.<span class="hljs-tag"></p>
+                            <span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div class="mb-8">
+                                <span class="hljs-tag"><h3 class="text-xl font-semibold text-gray-800 mb-4">Project Presentation Framework<span class="hljs-tag"></h3>
+    
+                                <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5 mb-6">
+                                    <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">1. Problem Statement & Motivation<span class="hljs-tag"></h4>
+                                    <span class="hljs-tag"><div class="space-y-3">
+                                        <span class="hljs-tag"><p class="text-gray-700">Start by clearly defining:<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <span class="hljs-tag"><li>The problem you were trying to solve<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Why this problem matters (business impact or research significance)<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Key constraints or challenges that made the problem interesting<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"></ul>
+    
+                                        <span class="hljs-tag"><div class="mt-3">
+                                            <span class="hljs-tag"><p class="text-sm font-medium text-gray-700 mb-2">Example:<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><div class="bg-gray-50 p-3 rounded border border-gray-200">
+                                                <span class="hljs-tag"><p class="text-gray-700 italic">"I developed a real-time anomaly detection system for network traffic to identify potential security breaches. The main challenge was balancing detection accuracy with low latency requirements, as alerts needed to be generated within seconds while processing millions of data points per minute."<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+    
+                                <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5 mb-6">
+                                    <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">2. Approach & Methodology<span class="hljs-tag"></h4>
+                                    <span class="hljs-tag"><div class="space-y-3">
+                                        <span class="hljs-tag"><p class="text-gray-700">Explain your technical approach:<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <span class="hljs-tag"><li>Data collection and preprocessing steps<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Model selection process and alternatives considered<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Architecture decisions and their justifications<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Implementation details and technologies used<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Evaluation methodology<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"></ul>
+    
+                                        <span class="hljs-tag"><div class="bg-yellow-50 p-3 rounded border border-yellow-200 mt-3">
+                                            <span class="hljs-tag"><p class="text-yellow-800"><span class="hljs-tag"><strong>Tip:<span class="hljs-tag"></strong> Be prepared to explain why you chose specific algorithms or frameworks over alternatives. Interviewers often probe your decision-making process to assess your technical depth.<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+    
+                                <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5 mb-6">
+                                    <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">3. Results & Impact<span class="hljs-tag"></h4>
+                                    <span class="hljs-tag"><div class="space-y-3">
+                                        <span class="hljs-tag"><p class="text-gray-700">Quantify your achievements:<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <span class="hljs-tag"><li>Performance metrics (accuracy, F1-score, BLEU, etc.)<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Improvements over baseline or previous systems<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Business impact (cost savings, revenue increase, etc.)<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Scale of deployment (users affected, data processed)<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"></ul>
+    
+                                        <span class="hljs-tag"><div class="mt-3">
+                                            <span class="hljs-tag"><p class="text-sm font-medium text-gray-700 mb-2">Example:<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><div class="bg-gray-50 p-3 rounded border border-gray-200">
+                                                <span class="hljs-tag"><p class="text-gray-700 italic">"The deployed model achieved 96% precision and 92% recall in detecting anomalies, a 15% improvement over the rule-based system it replaced. It processes 2TB of network data daily and has successfully identified 37 potential security incidents in the first month, reducing investigation time by 60%."<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+    
+                                <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5 mb-6">
+                                    <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">4. Challenges & Solutions<span class="hljs-tag"></h4>
+                                    <span class="hljs-tag"><div class="space-y-3">
+                                        <span class="hljs-tag"><p class="text-gray-700">Highlight obstacles you overcame:<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <span class="hljs-tag"><li>Technical challenges encountered<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>How you debugged difficult issues<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Performance optimization techniques<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Resource constraints and how you worked within them<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"></ul>
+    
+                                        <span class="hljs-tag"><div class="bg-green-50 p-3 rounded border border-green-200 mt-3">
+                                            <span class="hljs-tag"><p class="text-green-800"><span class="hljs-tag"><strong>Pro Tip:<span class="hljs-tag"></strong> Discussing challenges authentically demonstrates problem-solving abilities and resilience. Don't shy away from mentioning initial approaches that didn't work, as they show your learning process.<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+    
+                                <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5">
+                                    <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">5. Lessons Learned & Future Improvements<span class="hljs-tag"></h4>
+                                    <span class="hljs-tag"><div class="space-y-3">
+                                        <span class="hljs-tag"><p class="text-gray-700">Demonstrate reflection and growth:<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <span class="hljs-tag"><li>Key insights gained from the project<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>What you would do differently with hindsight<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Potential enhancements for future iterations<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>How this project influenced your subsequent work<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"></ul>
+                                    <span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+                            <span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div>
+                                <span class="hljs-tag"><h3 class="text-xl font-semibold text-gray-800 mb-4">Technical Deep Dive Preparation<span class="hljs-tag"></h3>
+    
+                                <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5 mb-6">
+                                    <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">Common Technical Deep Dive Questions<span class="hljs-tag"></h4>
+                                    <span class="hljs-tag"><div class="space-y-4">
+                                        <span class="hljs-tag"><div>
+                                            <span class="hljs-tag"><p class="font-medium text-gray-700">1. Model Architecture Details<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                                <span class="hljs-tag"><li>Why did you choose this specific architecture?<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>How did you determine the optimal hyperparameters?<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>What were the tradeoffs between different model options?<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"></ul>
+                                        <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"><div>
+                                            <span class="hljs-tag"><p class="font-medium text-gray-700">2. Data Processing Decisions<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                                <span class="hljs-tag"><li>How did you handle missing or noisy data?<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>What feature engineering techniques did you apply?<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>How did you ensure your training data was representative?<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"></ul>
+                                        <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"><div>
+                                            <span class="hljs-tag"><p class="font-medium text-gray-700">3. Deployment & Scaling<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                                <span class="hljs-tag"><li>How did you optimize the model for production?<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>What monitoring systems did you implement?<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>How did you handle version control and updates?<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"></ul>
+                                        <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"><div>
+                                            <span class="hljs-tag"><p class="font-medium text-gray-700">4. Performance Analysis<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                                <span class="hljs-tag"><li>How did you diagnose and address performance bottlenecks?<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>What metrics did you use to evaluate success?<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>How did you validate the model's generalization ability?<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"></ul>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+    
+                                <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5">
+                                    <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">Visual Aids for Project Discussions<span class="hljs-tag"></h4>
+                                    <span class="hljs-tag"><div class="space-y-3">
+                                        <span class="hljs-tag"><p class="text-gray-700">Consider preparing:<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                            <span class="hljs-tag"><li>System architecture diagrams<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Performance graphs and visualizations<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Code snippets highlighting key algorithms<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Before/after comparisons showing improvements<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li>Demo videos if the project has a visual component<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"></ul>
+    
+                                        <span class="hljs-tag"><div class="bg-purple-50 p-3 rounded border border-purple-200 mt-3">
+                                            <span class="hljs-tag"><p class="text-purple-800"><span class="hljs-tag"><strong>Presentation Tip:<span class="hljs-tag"></strong> For virtual interviews, have these materials ready to share on your screen. For in-person interviews, bring a tablet or printed copies of key visualizations.<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+                            <span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded mt-6">
+                                <span class="hljs-tag"><h4 class="font-semibold text-indigo-800 mb-2">Project Selection Strategy:<span class="hljs-tag"></h4>
+                                <span class="hljs-tag"><p class="text-indigo-700 mb-3">When deciding which projects to highlight in interviews:<span class="hljs-tag"></p>
+                                <span class="hljs-tag"><ul class="list-disc pl-5 text-indigo-700 space-y-1">
+                                    <span class="hljs-tag"><li>Choose projects most relevant to the role you're applying for<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"><li>Prioritize projects where you had significant ownership<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"><li>Select projects that demonstrate different skills (e.g., one showing ML expertise, another showing engineering skills)<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"><li>Be prepared to discuss at least one project where you faced significant challenges<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"><li>Include at least one project with measurable business impact<span class="hljs-tag"></li>
+                                <span class="hljs-tag"></ul>
+                            <span class="hljs-tag"></div>
+                        <span class="hljs-tag"></div>
+                    `
+                },
+                behavioral: {
+                    title: "Behavioral Interview Preparation",
+                    content: `
+                        <span class="hljs-tag"><div class="space-y-6">
+                            <span class="hljs-tag"><div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded mb-6">
+                                <span class="hljs-tag"><h4 class="font-semibold text-blue-800 mb-2">Behavioral Interview Strategy:<span class="hljs-tag"></h4>
+                                <span class="hljs-tag"><p class="text-blue-700">Behavioral questions assess how you've handled situations in the past to predict your future performance. For AI roles, these questions often focus on technical problem-solving, collaboration, and adaptability.<span class="hljs-tag"></p>
+                            <span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div class="mb-8">
+                                <span class="hljs-tag"><h3 class="text-xl font-semibold text-gray-800 mb-4">The STAR Method<span class="hljs-tag"></h3>
+    
+                                <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5 mb-6">
+                                    <span class="hljs-tag"><div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                                        <span class="hljs-tag"><div class="bg-blue-50 p-4 rounded-lg">
+                                            <span class="hljs-tag"><h4 class="font-medium text-blue-800 mb-2">S - Situation<span class="hljs-tag"></h4>
+                                            <span class="hljs-tag"><p class="text-gray-700">Describe the context and background of the situation you faced.<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"><div class="bg-green-50 p-4 rounded-lg">
+                                            <span class="hljs-tag"><h4 class="font-medium text-green-800 mb-2">T - Task<span class="hljs-tag"></h4>
+                                            <span class="hljs-tag"><p class="text-gray-700">Explain your specific responsibilities or challenges in that situation.<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"><div class="bg-yellow-50 p-4 rounded-lg">
+                                            <span class="hljs-tag"><h4 class="font-medium text-yellow-800 mb-2">A - Action<span class="hljs-tag"></h4>
+                                            <span class="hljs-tag"><p class="text-gray-700">Detail the steps you took to address the challenge.<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"><div class="bg-red-50 p-4 rounded-lg">
+                                            <span class="hljs-tag"><h4 class="font-medium text-red-800 mb-2">R - Result<span class="hljs-tag"></h4>
+                                            <span class="hljs-tag"><p class="text-gray-700">Share the outcomes of your actions and what you learned.<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+    
+                                    <span class="hljs-tag"><div class="mt-6 bg-gray-50 p-4 rounded border border-gray-200">
+                                        <span class="hljs-tag"><p class="text-sm font-medium text-gray-700 mb-2">Example STAR Response:<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"><p class="text-gray-700 mb-2"><span class="hljs-tag"><strong>Question:<span class="hljs-tag"></strong> Tell me about a time when you had to explain a complex technical concept to non-technical stakeholders.<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"><div class="space-y-2">
+                                            <span class="hljs-tag"><p class="text-gray-700"><span class="hljs-tag"><strong>Situation:<span class="hljs-tag"></strong> "At my previous company, we developed a recommendation system for our e-commerce platform that used collaborative filtering. The marketing team was skeptical about implementing it because they didn't understand how it worked."<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><p class="text-gray-700"><span class="hljs-tag"><strong>Task:<span class="hljs-tag"></strong> "I needed to explain the technical approach in a way that would build confidence with the marketing team and address their concerns about how it would affect the customer experience."<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><p class="text-gray-700"><span class="hljs-tag"><strong>Action:<span class="hljs-tag"></strong> "I created a visual presentation that used a simple analogy comparing the algorithm to how people get book recommendations from friends with similar tastes. I avoided technical jargon and focused on the business benefits. I also set up a small A/B test to demonstrate the impact in terms they cared about: conversion rate and average order value."<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><p class="text-gray-700"><span class="hljs-tag"><strong>Result:<span class="hljs-tag"></strong> "The marketing team not only approved the implementation but became enthusiastic advocates for the project. The recommendation system increased conversion rates by 23% and the marketing team later approached me to explore additional ML features for other parts of the customer journey."<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+                            <span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div>
+                                <span class="hljs-tag"><h3 class="text-xl font-semibold text-gray-800 mb-4">Common Behavioral Questions for AI Roles<span class="hljs-tag"></h3>
+    
+                                <span class="hljs-tag"><div class="space-y-6">
+                                    <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5">
+                                        <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">1. Technical Problem-Solving<span class="hljs-tag"></h4>
+                                        <span class="hljs-tag"><div class="space-y-4">
+                                            <span class="hljs-tag"><div>
+                                                <span class="hljs-tag"><p class="font-medium text-gray-700">• Tell me about a challenging ML problem you solved.<span class="hljs-tag"></p>
+                                                <span class="hljs-tag"><p class="text-gray-600 mt-1">Focus on: Your analytical approach, how you evaluated different solutions, and the impact of your solution.<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                            <span class="hljs-tag"><div>
+                                                <span class="hljs-tag"><p class="font-medium text-gray-700">• Describe a time when your initial approach to a problem didn't work.<span class="hljs-tag"></p>
+                                                <span class="hljs-tag"><p class="text-gray-600 mt-1">Focus on: How you diagnosed the issue, your adaptability, and what you learned from the experience.<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                            <span class="hljs-tag"><div>
+                                                <span class="hljs-tag"><p class="font-medium text-gray-700">• How have you optimized an ML model for production?<span class="hljs-tag"></p>
+                                                <span class="hljs-tag"><p class="text-gray-600 mt-1">Focus on: Your understanding of the tradeoffs between accuracy and efficiency, and your technical approach to optimization.<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+    
+                                    <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5">
+                                        <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">2. Collaboration & Communication<span class="hljs-tag"></h4>
+                                        <span class="hljs-tag"><div class="space-y-4">
+                                            <span class="hljs-tag"><div>
+                                                <span class="hljs-tag"><p class="font-medium text-gray-700">• Tell me about a time you worked with cross-functional teams on an AI project.<span class="hljs-tag"></p>
+                                                <span class="hljs-tag"><p class="text-gray-600 mt-1">Focus on: How you communicated technical concepts, managed expectations, and incorporated feedback from different stakeholders.<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                            <span class="hljs-tag"><div>
+                                                <span class="hljs-tag"><p class="font-medium text-gray-700">• Describe a situation where you had to convince others to adopt your technical approach.<span class="hljs-tag"></p>
+                                                <span class="hljs-tag"><p class="text-gray-600 mt-1">Focus on: Your persuasion skills, how you presented evidence, and how you addressed concerns.<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                            <span class="hljs-tag"><div>
+                                                <span class="hljs-tag"><p class="font-medium text-gray-700">• How have you handled disagreements with team members about technical decisions?<span class="hljs-tag"></p>
+                                                <span class="hljs-tag"><p class="text-gray-600 mt-1">Focus on: Your conflict resolution approach, how you balance assertiveness with openness to other perspectives.<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+    
+                                    <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5">
+                                        <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">3. Leadership & Initiative<span class="hljs-tag"></h4>
+                                        <span class="hljs-tag"><div class="space-y-4">
+                                            <span class="hljs-tag"><div>
+                                                <span class="hljs-tag"><p class="font-medium text-gray-700">• Tell me about a time you led an AI/ML initiative.<span class="hljs-tag"></p>
+                                                <span class="hljs-tag"><p class="text-gray-600 mt-1">Focus on: How you set direction, motivated team members, and overcame obstacles.<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                            <span class="hljs-tag"><div>
+                                                <span class="hljs-tag"><p class="font-medium text-gray-700">• Describe a situation where you identified an opportunity to apply AI to solve a business problem.<span class="hljs-tag"></p>
+                                                <span class="hljs-tag"><p class="text-gray-600 mt-1">Focus on: Your business acumen, how you identified the opportunity, and how you built support for your idea.<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                            <span class="hljs-tag"><div>
+                                                <span class="hljs-tag"><p class="font-medium text-gray-700">• How have you helped junior team members develop their AI/ML skills?<span class="hljs-tag"></p>
+                                                <span class="hljs-tag"><p class="text-gray-600 mt-1">Focus on: Your mentorship approach, patience in explaining complex concepts, and commitment to team growth.<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+    
+                                    <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5">
+                                        <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">4. Adaptability & Learning<span class="hljs-tag"></h4>
+                                        <span class="hljs-tag"><div class="space-y-4">
+                                            <span class="hljs-tag"><div>
+                                                <span class="hljs-tag"><p class="font-medium text-gray-700">• How do you stay updated with the rapidly evolving field of AI?<span class="hljs-tag"></p>
+                                                <span class="hljs-tag"><p class="text-gray-600 mt-1">Focus on: Your learning habits, how you evaluate new techniques, and how you apply new knowledge.<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                            <span class="hljs-tag"><div>
+                                                <span class="hljs-tag"><p class="font-medium text-gray-700">• Tell me about a time you had to quickly learn a new technology or framework for a project.<span class="hljs-tag"></p>
+                                                <span class="hljs-tag"><p class="text-gray-600 mt-1">Focus on: Your learning strategy, how you prioritized what to learn, and how quickly you became productive.<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                            <span class="hljs-tag"><div>
+                                                <span class="hljs-tag"><p class="font-medium text-gray-700">• Describe a situation where project requirements changed significantly midway.<span class="hljs-tag"></p>
+                                                <span class="hljs-tag"><p class="text-gray-600 mt-1">Focus on: Your flexibility, how you reprioritized work, and how you managed the transition.<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+    
+                                    <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5">
+                                        <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">5. Ethics & Responsibility<span class="hljs-tag"></h4>
+                                        <span class="hljs-tag"><div class="space-y-4">
+                                            <span class="hljs-tag"><div>
+                                                <span class="hljs-tag"><p class="font-medium text-gray-700">• How have you addressed bias or fairness issues in an AI system?<span class="hljs-tag"></p>
+                                                <span class="hljs-tag"><p class="text-gray-600 mt-1">Focus on: Your awareness of ethical issues, practical steps you took to mitigate bias, and how you evaluated fairness.<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                            <span class="hljs-tag"><div>
+                                                <span class="hljs-tag"><p class="font-medium text-gray-700">• Tell me about a time you had to make a difficult decision about data privacy or security.<span class="hljs-tag"></p>
+                                                <span class="hljs-tag"><p class="text-gray-600 mt-1">Focus on: Your ethical framework, how you balanced competing priorities, and your commitment to responsible AI.<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                            <span class="hljs-tag"><div>
+                                                <span class="hljs-tag"><p class="font-medium text-gray-700">• How do you ensure the AI systems you build are transparent and explainable?<span class="hljs-tag"></p>
+                                                <span class="hljs-tag"><p class="text-gray-600 mt-1">Focus on: Your technical approaches to explainability, how you communicate limitations, and your commitment to responsible deployment.<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+                            <span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded mt-6">
+                                <span class="hljs-tag"><h4 class="font-semibold text-yellow-800 mb-2">Preparation Strategy:<span class="hljs-tag"></h4>
+                                <span class="hljs-tag"><ol class="list-decimal pl-5 text-yellow-700 space-y-1">
+                                    <span class="hljs-tag"><li>Identify 5-7 significant projects or experiences from your career that demonstrate different skills and situations<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"><li>For each experience, prepare a STAR-formatted story that can be adapted to different questions<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"><li>Practice your responses aloud, aiming for 2-3 minutes per answer<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"><li>Record yourself to identify areas for improvement in content and delivery<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"><li>Ask a colleague or mentor to conduct a mock interview and provide feedback<span class="hljs-tag"></li>
+                                <span class="hljs-tag"></ol>
+                            <span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div class="bg-green-50 border-l-4 border-green-500 p-4 rounded mt-6">
+                                <span class="hljs-tag"><h4 class="font-semibold text-green-800 mb-2">During the Interview:<span class="hljs-tag"></h4>
+                                <span class="hljs-tag"><ul class="list-disc pl-5 text-green-700 space-y-1">
+                                    <span class="hljs-tag"><li>Listen carefully to the question before answering<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"><li>Take a moment to select the most relevant example<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"><li>Be specific about your individual contributions, especially in team settings<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"><li>Quantify results whenever possible<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"><li>Be honest about challenges and what you learned<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"><li>Keep responses concise and focused on the question<span class="hljs-tag"></li>
+                                <span class="hljs-tag"></ul>
+                            <span class="hljs-tag"></div>
+                        <span class="hljs-tag"></div>
+                    `
+                },
+                trends: {
+                    title: "AI Industry Trends",
+                    content: `
+                        <span class="hljs-tag"><div class="space-y-6">
+                            <span class="hljs-tag"><div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded mb-6">
+                                <span class="hljs-tag"><h4 class="font-semibold text-blue-800 mb-2">Why Industry Knowledge Matters:<span class="hljs-tag"></h4>
+                                <span class="hljs-tag"><p class="text-blue-700">Demonstrating awareness of current AI trends shows interviewers that you're passionate about the field and proactive about your professional development. It also helps you understand how your potential role fits into the broader industry landscape.<span class="hljs-tag"></p>
+                            <span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div class="mb-8">
+                                <span class="hljs-tag"><h3 class="text-xl font-semibold text-gray-800 mb-4">Current AI Trends (2023-2024)<span class="hljs-tag"></h3>
+    
+                                <span class="hljs-tag"><div class="space-y-6">
+                                    <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5">
+                                        <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">1. Large Language Models & Foundation Models<span class="hljs-tag"></h4>
+                                        <span class="hljs-tag"><div class="space-y-3">
+                                            <span class="hljs-tag"><p class="text-gray-700">The rapid evolution of large language models (LLMs) like GPT-4, Claude, and Llama has transformed the AI landscape. Key developments include:<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                                <span class="hljs-tag"><li>Scaling laws and emergent capabilities<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Instruction tuning and RLHF (Reinforcement Learning from Human Feedback)<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Multimodal models that combine text, image, and audio understanding<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Efficient fine-tuning techniques (LoRA, QLoRA, etc.)<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Open-source alternatives to proprietary models<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"></ul>
+    
+                                            <span class="hljs-tag"><div class="bg-gray-50 p-3 rounded border border-gray-200 mt-3">
+                                                <span class="hljs-tag"><p class="text-gray-700"><span class="hljs-tag"><strong>Interview Talking Point:<span class="hljs-tag"></strong> "The emergence of foundation models has shifted the paradigm from training specialized models from scratch to adapting pre-trained models for specific tasks. This has democratized access to advanced AI capabilities but also raises questions about compute requirements, environmental impact, and the need for specialized infrastructure."<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+    
+                                    <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5">
+                                        <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">2. AI Agents & Autonomous Systems<span class="hljs-tag"></h4>
+                                        <span class="hljs-tag"><div class="space-y-3">
+                                            <span class="hljs-tag"><p class="text-gray-700">There's growing interest in AI systems that can plan, reason, and take actions to accomplish goals:<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                                <span class="hljs-tag"><li>LLM-powered agents that can use tools and APIs<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Agentic workflows combining multiple specialized models<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Retrieval-augmented generation (RAG) for grounding models in factual information<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Multi-agent systems that collaborate to solve complex problems<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Autonomous decision-making in specific domains<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"></ul>
+    
+                                            <span class="hljs-tag"><div class="bg-gray-50 p-3 rounded border border-gray-200 mt-3">
+                                                <span class="hljs-tag"><p class="text-gray-700"><span class="hljs-tag"><strong>Interview Talking Point:<span class="hljs-tag"></strong> "The development of AI agents represents a shift from passive models that respond to queries to proactive systems that can take initiative. This creates new opportunities for automation but also raises important questions about oversight, alignment with human values, and appropriate levels of autonomy."<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+    
+                                    <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5">
+                                        <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">3. Responsible AI & Governance<span class="hljs-tag"></h4>
+                                        <span class="hljs-tag"><div class="space-y-3">
+                                            <span class="hljs-tag"><p class="text-gray-700">As AI capabilities advance, there's increased focus on ensuring systems are developed and deployed responsibly:<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                                <span class="hljs-tag"><li>AI alignment and safety research<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Fairness, accountability, transparency, and ethics (FATE)<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Regulatory frameworks like the EU AI Act<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Red-teaming and adversarial testing of AI systems<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Interpretability and explainability techniques<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"></ul>
+    
+                                            <span class="hljs-tag"><div class="bg-gray-50 p-3 rounded border border-gray-200 mt-3">
+                                                <span class="hljs-tag"><p class="text-gray-700"><span class="hljs-tag"><strong>Interview Talking Point:<span class="hljs-tag"></strong> "As AI systems become more powerful and widely deployed, responsible AI practices are shifting from nice-to-have to business-critical. Organizations are establishing governance frameworks that balance innovation with risk management, and technical teams are incorporating safety measures throughout the development lifecycle."<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+    
+                                    <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5">
+                                        <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">4. MLOps & AI Infrastructure<span class="hljs-tag"></h4>
+                                        <span class="hljs-tag"><div class="space-y-3">
+                                            <span class="hljs-tag"><p class="text-gray-700">The industrialization of AI development has led to sophisticated operational practices:<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                                <span class="hljs-tag"><li>Specialized hardware for AI training and inference<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Model monitoring and observability tools<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Efficient serving architectures for large models<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Continuous training and evaluation pipelines<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Vector databases and efficient retrieval systems<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"></ul>
+    
+                                            <span class="hljs-tag"><div class="bg-gray-50 p-3 rounded border border-gray-200 mt-3">
+                                                <span class="hljs-tag"><p class="text-gray-700"><span class="hljs-tag"><strong>Interview Talking Point:<span class="hljs-tag"></strong> "The complexity of modern AI systems has driven the evolution of MLOps from basic CI/CD to comprehensive platforms that manage the entire model lifecycle. Organizations are investing in specialized infrastructure and practices to ensure reliable, efficient, and cost-effective AI operations at scale."<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+    
+                                    <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5">
+                                        <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">5. Generative AI Applications<span class="hljs-tag"></h4>
+                                        <span class="hljs-tag"><div class="space-y-3">
+                                            <span class="hljs-tag"><p class="text-gray-700">Generative AI is being applied across industries in innovative ways:<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-700 space-y-1">
+                                                <span class="hljs-tag"><li>Content creation and augmentation tools<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Code generation and software development assistance<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Synthetic data generation for training and testing<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Personalized education and training systems<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Creative tools for design, music, and art<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"></ul>
+    
+                                            <span class="hljs-tag"><div class="bg-gray-50 p-3 rounded border border-gray-200 mt-3">
+                                                <span class="hljs-tag"><p class="text-gray-700"><span class="hljs-tag"><strong>Interview Talking Point:<span class="hljs-tag"></strong> "Generative AI is transforming workflows across industries by augmenting human capabilities rather than simply automating tasks. The most successful applications combine AI capabilities with thoughtful UX design and domain expertise to create tools that enhance human creativity and productivity."<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+                            <span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div>
+                                <span class="hljs-tag"><h3 class="text-xl font-semibold text-gray-800 mb-4">Staying Current with AI Research and Developments<span class="hljs-tag"></h3>
+    
+                                <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5 mb-6">
+                                    <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">Key Resources to Follow<span class="hljs-tag"></h4>
+                                    <span class="hljs-tag"><div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <span class="hljs-tag"><div>
+                                            <span class="hljs-tag"><p class="font-medium text-gray-700 mb-2">Research Papers & Conferences<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                                <span class="hljs-tag"><li>arXiv (Machine Learning section)<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>NeurIPS, ICML, ICLR, ACL, CVPR<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Papers With Code<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Google Scholar alerts for key topics<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"></ul>
+                                        <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"><div>
+                                            <span class="hljs-tag"><p class="font-medium text-gray-700 mb-2">Industry News & Analysis<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                                <span class="hljs-tag"><li>The Batch (Andrew Ng's newsletter)<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Import AI by Jack Clark<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>ML/AI-focused Substack newsletters<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Company research blogs (OpenAI, DeepMind, etc.)<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"></ul>
+                                        <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"><div>
+                                            <span class="hljs-tag"><p class="font-medium text-gray-700 mb-2">Communities & Forums<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                                <span class="hljs-tag"><li>r/MachineLearning on Reddit<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Hugging Face community forums<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>AI-focused Discord servers<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Twitter/X AI researcher community<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"></ul>
+                                        <span class="hljs-tag"></div>
+                                        <span class="hljs-tag"><div>
+                                            <span class="hljs-tag"><p class="font-medium text-gray-700 mb-2">Practical Implementations<span class="hljs-tag"></p>
+                                            <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                                <span class="hljs-tag"><li>GitHub trending repositories<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Kaggle competitions and notebooks<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Model implementations on Hugging Face<span class="hljs-tag"></li>
+                                                <span class="hljs-tag"><li>Tech company engineering blogs<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"></ul>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+    
+                                <span class="hljs-tag"><div class="bg-white border border-gray-200 rounded-lg p-5">
+                                    <span class="hljs-tag"><h4 class="font-medium text-gray-800 mb-3">Effective Learning Strategies<span class="hljs-tag"></h4>
+                                    <span class="hljs-tag"><div class="space-y-3">
+                                        <span class="hljs-tag"><ul class="list-disc pl-5 text-gray-700 space-y-2">
+                                            <span class="hljs-tag"><li><span class="hljs-tag"><strong>Implement papers:<span class="hljs-tag"></strong> Try to implement key ideas from research papers to deepen your understanding.<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li><span class="hljs-tag"><strong>Join reading groups:<span class="hljs-tag"></strong> Participate in or start a paper reading group to discuss recent research.<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li><span class="hljs-tag"><strong>Build side projects:<span class="hljs-tag"></strong> Apply new techniques to practical problems to solidify your knowledge.<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li><span class="hljs-tag"><strong>Contribute to open source:<span class="hljs-tag"></strong> Engage with open-source AI projects to learn from the community.<span class="hljs-tag"></li>
+                                            <span class="hljs-tag"><li><span class="hljs-tag"><strong>Teach others:<span class="hljs-tag"></strong> Explaining concepts through blog posts or tutorials reinforces your understanding.<span class="hljs-tag"></li>
+                                        <span class="hljs-tag"></ul>
+    
+                                        <span class="hljs-tag"><div class="bg-purple-50 p-3 rounded border border-purple-200 mt-3">
+                                            <span class="hljs-tag"><p class="text-purple-800"><span class="hljs-tag"><strong>Interview Tip:<span class="hljs-tag"></strong> When discussing industry trends in interviews, focus on connecting them to your practical experience or interests. Rather than simply listing trends, demonstrate how you've applied or plan to apply these concepts in your work.<span class="hljs-tag"></p>
+                                        <span class="hljs-tag"></div>
+                                    <span class="hljs-tag"></div>
+                                <span class="hljs-tag"></div>
+                            <span class="hljs-tag"></div>
+    
+                            <span class="hljs-tag"><div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded mt-6">
+                                <span class="hljs-tag"><h4 class="font-semibold text-indigo-800 mb-2">Discussing Trends in Interviews:<span class="hljs-tag"></h4>
+                                <span class="hljs-tag"><ul class="list-disc pl-5 text-indigo-700 space-y-1">
+                                    <span class="hljs-tag"><li>Be prepared to discuss how current trends might impact the company you're interviewing with<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"><li>Have informed opinions about where the field is heading, but stay humble and acknowledge uncertainty<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"><li>Demonstrate critical thinking by discussing both opportunities and challenges presented by new technologies<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"><li>Connect trends to your own career goals and interests<span class="hljs-tag"></li>
+                                    <span class="hljs-tag"><li>Ask thoughtful questions about how the company is responding to or leveraging these trends<span class="hljs-tag"></li>
+                                <span class="hljs-tag"></ul>
+                            <span class="hljs-tag"></div>
+                        <span class="hljs-tag"></div>
+                    `
+                }
+            };
+    
+            // Modal functionality
+            const modal = document.getElementById('modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalContent = document.getElementById('modal-content');
+            const closeModal = document.getElementById('close-modal');
+    
+            function showModal(title, content) {
+                modalTitle.textContent = title;
+                modalContent.innerHTML = content;
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.add('opacity-100');
+                }, 10);
+            }
+    
+            function hideModal() {
+                modal.classList.remove('opacity-100');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300);
+            }
+    
+            closeModal.addEventListener('click', hideModal);
+    
+            // Close modal when clicking outside
+            modal.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    hideModal();
+                }
+            });
+    
+            // Topic bubble click handlers
+            const topicBubbles = document.querySelectorAll('.topic-bubble');
+            topicBubbles.forEach(bubble => {
+                bubble.addEventListener('click', function() {
+                    const topic = this.getAttribute('data-topic');
+                    const topicData = topicContent[topic];
+                    showModal(topicData.title, topicData.content);
+                });
+            });
+    
+            // Interview simulator functionality
+            const generateButton = document.getElementById('generate-question');
+            const questionContainer = document.getElementById('question-container');
+            const feedbackContainer = document.getElementById('feedback-container');
+            const interviewQuestion = document.getElementById('interview-question');
+            const checkAnswerButton = document.getElementById('check-answer');
+            const userAnswer = document.getElementById('user-answer');
+            const answerFeedback = document.getElementById('answer-feedback');
+            const sampleAnswer = document.getElementById('sample-answer');
+            const keyPoints = document.getElementById('key-points');
+    
+            generateButton.addEventListener('click', async function() {
+                // Show loading state
+                generateButton.disabled = true;
+                generateButton.innerHTML = '<span class="hljs-tag"><span>Generating Question...<span class="hljs-tag"></span><span class="hljs-tag"><svg class="animate-spin h-5 w-5 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><span class="hljs-tag"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"><span class="hljs-tag"></circle><span class="hljs-tag"><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"><span class="hljs-tag"></path><span class="hljs-tag"></svg>';
+    
+                const role = document.getElementById('role').value;
+                const experience = document.getElementById('experience').value;
+    
+                try {
+                    // Call the LLM to generate a question
+                    const result = await window.call_llm(
+                        `You are an AI interview expert specializing in technical interviews for AI and machine learning roles.
+                        Generate a realistic interview question for a ${role} position at the ${experience} level.
+                        The question should be challenging but appropriate for the experience level.
+                        Also provide a sample strong answer to this question and 3-5 key points that should be included in a good answer.`,
+                        [{role: "user", content: "Generate an interview question"}],
+                        {
+                            question: "The interview question",
+                            sampleAnswer: "A comprehensive sample answer",
+                            keyPoints: "An array of 3-5 key points that should be included in a good answer"
+                        }
+                    );
+    
+                    // Display the question
+                    interviewQuestion.textContent = result.question;
+                    sampleAnswer.textContent = result.sampleAnswer;
+    
+                    // Clear previous key points
+                    keyPoints.innerHTML = '';
+    
+                    // Add key points
+                    const points = Array.isArray(result.keyPoints) ? result.keyPoints : result.keyPoints.split('\n').filter(point => point.trim() !== '');
+                    points.forEach(point => {
+                        const li = document.createElement('li');
+                        li.textContent = point;
+                        keyPoints.appendChild(li);
+                    });
+    
+                    // Show the question container
+                    questionContainer.classList.remove('hidden');
+                    feedbackContainer.classList.add('hidden');
+                    userAnswer.value = '';
+    
+                } catch (error) {
+                    console.error("Error generating question:", error);
+                    alert("There was an error generating the question. Please try again.");
+                } finally {
+                    // Reset button state
+                    generateButton.disabled = false;
+                    generateButton.innerHTML = '<span class="hljs-tag"><span>Generate Interview Question<span class="hljs-tag"></span><span class="hljs-tag"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor"><span class="hljs-tag"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd" /><span class="hljs-tag"></svg>';
+                }
+            });
+    
+            checkAnswerButton.addEventListener('click', async function() {
+                if (!userAnswer.value.trim()) {
+                    alert("Please enter your answer before checking.");
+                    return;
+                }
+    
+                // Show loading state
+                checkAnswerButton.disabled = true;
+                checkAnswerButton.textContent = 'Analyzing...';
+    
+                try {
+                    // Call the LLM to analyze the answer
+                    const result = await window.call_llm(
+                        `You are an AI interview expert specializing in technical interviews for AI and machine learning roles.
+                        Analyze the candidate's answer to the following interview question and provide constructive feedback.
+                        Be encouraging but honest about areas for improvement. Focus on content, clarity, and technical accuracy.
+                        Question: ${interviewQuestion.textContent}
+                        Sample strong answer for reference: ${sampleAnswer.textContent}`,
+                        [{role: "user", content: `Candidate's answer: ${userAnswer.value}`}],
+                        {
+                            feedback: "Detailed constructive feedback on the answer"
+                        }
+                    );
+    
+                    // Display the feedback
+                    answerFeedback.innerHTML = result.feedback;
+                    feedbackContainer.classList.remove('hidden');
+    
+                    // Save the practice data
+                    window.save_data_to_csv([{
+                        date: new Date().toISOString(),
+                        question: interviewQuestion.textContent,
+                        answer: userAnswer.value,
+                        feedback: result.feedback
+                    }]);
+    
+                } catch (error) {
+                    console.error("Error analyzing answer:", error);
+                    alert("There was an error analyzing your answer. Please try again.");
+                } finally {
+                    // Reset button state
+                    checkAnswerButton.disabled = false;
+                    checkAnswerButton.textContent = 'Check Answer';
+                }
+            });
+    
+            // Hide loading screen
+            setTimeout(() => {
+                document.getElementById('loading').classList.add('opacity-0');
+                setTimeout(() => {
+                    document.getElementById('loading').classList.add('hidden');
+                }, 300);
+            }, 800);
+        });
+    <span class="hljs-tag"></script>
+    <span class="hljs-tag"></body>
+    <span class="hljs-tag"></html></code>
